@@ -11,148 +11,7 @@ package firstapp;
  */
 public class FirstApp {
 
-    public static String Claculat(int num) {
-
-        int count = 0;
-        int digitsum = 0;
-        int digitmult;
-        int summult = 0;
-
-        do {
-            int digit = num % 10;
-            digitsum = digitsum + digit;
-            digitmult = digit * digit;
-            summult = summult + digitmult;
-            System.out.println(digit);
-            num = num / 10;
-            count = count + 1;
-        } while (num != 0);
-
-        String output = "sum is\t " + summult;
-        output = output + "\ndigit sum is\t " + digitsum;
-        output = output + "\ncount is\t " + count;
-        return output;
-    }
-
-    public static String calculateaangle(int h, int m) {
-
-        //input 
-        float angle = 0;
-        //processing
-        if (h > 12 && h <= 24) {
-            h = h - 12;
-        }
-
-        if ((m <= 59 && m >= 0) && (h < 12 && h >= 0)) {
-            float hoursarg = h * 30 + m * .5F;
-            float minarg = m * 6;
-            angle = (hoursarg - minarg);
-            if (angle < 0) {
-                angle = angle * -1;
-
-            }
-        }
-
-        //output
-        String message = "";
-        if (h > 12) {
-            message = "please enter corrrect hours less than 12";
-        } else if (h < 0) {
-            message = "please enter corrrect hours greater than 0 or equl zero";
-        } else if (m < 0) {
-            message = "please enter corrrect minutes greater than zero or equal zero";
-        } else if (m > 60) {
-            message = "please enter corrrect minutes less than 60";
-        } else {
-            message = " angle is " + angle;
-        }
-        return message;
-
-    }
-
-    public static String calculator(int x, int y) {
-
-        int sum;
-        int dis;
-        int mult;
-        float div;
-        sum = x + y;
-        dis = y - x;
-        mult = x * y;
-        div = (float) y / x;
-
-        String opertion = x + "+" + y + " = " + sum + "\n";
-        opertion = opertion + x + "-" + y + " = " + dis + "\n";
-        opertion = opertion + x + "*" + y + " = " + mult + "\n";
-        opertion = opertion + y + "/" + x + " = " + div + "\n";
-
-//        System.out.println(x + y);
-//        System.out.println("sum = " + x + y);
-//        System.out.println(x + y + "<=sum");
-        return opertion;
-    }
-
-    public static int calbermamethod() {
-        int s = 0;
-        for (int i = 60; i < 1000; i = i + 60) {
-            if (((i + 1) % 7) == 0) {
-                s = i + 1;
-                break;
-
-            }
-        }
-        return s;
-    }
-
-    public static String excutemonthdays(int years, int month) {
-        //inputs
-        int days = 0;
-
-        //proccessing 
-        for (int i = 1; i <= 12; i++) {
-            if (month == i) {
-                if (i == 2) {
-                    if (years % 4 == 0) {
-                        days = 29;
-                    } else {
-                        days = 28;
-                    }
-                } else if (i < 8) {
-                    if (i % 2 == 0) {
-                        days = 30;
-                    } else {
-                        days = 31;
-                    }
-                } else if (i > 8) {
-                    if (i % 2 == 0) {
-                        days = 31;
-                    } else {
-                        days = 30;
-                    }
-                }
-            }
-        }
-
-        //output
-        String message = "";
-        if (days == 0) {
-            message = " INVALID MONTH !!!!";
-        } else {
-            message = " the month " + month + " is " + days + " days";
-        }
-        return message;
-        /*
-         int number=20;  
-         //switch expression with int value  
-         switch(number){  
-         //switch cases without break statements  
-         case 10: System.out.println("10");  
-         case 20: System.out.println("20");  
-         case 30: System.out.println("30");  
-         default:System.out.println("Not in 10, 20 or 30");  
-         }   */
-
-    }
+   
 
     public static int SumofArayy(int a[]) {
 
@@ -236,22 +95,18 @@ public class FirstApp {
         System.out.print("\n");
         BubbleSort(a);
         System.out.print("\n");
-//       int[] sorted= CalculateOfOddEvenNum(a);
-//        for (int i = 0; i < sorted.length; i++) {
-//            if (sorted[i]%2 == 0){
-//            System.out.println(sorted[i]+ " is an even number");}
-//            else
-//                System.out.println(sorted[i]+ " is an odd number");
-//        }
+       int[] sorted= CalculateOfOddEvenNum(a);
+        for (int i = 0; i < sorted.length; i++) {
+            if (sorted[i]%2 == 0){
+            System.out.println(sorted[i]+ " is an even number");}
+            else
+                System.out.println(sorted[i]+ " is an odd number");
+        }
 
-        //System.out.println("even num is " + CalculateOfOddEvenNum(a));
-        //System.out.println("sum of array num is " + SumofArayy(a));
-        // System.out.println("max num is  " + FindmaxNum(a));
-//        System.out.println(Claculat(23));
-//        String result = calculateaangle(3, 0);
-//        System.out.println(result);
-//        System.out.println(calculator(5, 10));
-//        System.out.println("berma " + calbermamethod());
-//        System.out.println(excutemonthdays(2021, 2));
+        System.out.println("even num is " + CalculateOfOddEvenNum(a));
+        System.out.println("sum of array num is " + SumofArayy(a));
+         System.out.println("max num is  " + FindmaxNum(a));
+         
+          
     }
 }
